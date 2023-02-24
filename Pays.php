@@ -6,7 +6,7 @@ class Pays{
     private array $_joueur;
     private array $_equipe;
 
-    public function __construct(string $_nom , array $_joueur , array $_equipe)
+    public function __construct(string $_nom )
     {
         $this->_nom = $_nom;
         $this->_joueur = [];
