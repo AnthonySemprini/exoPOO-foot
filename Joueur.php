@@ -62,12 +62,16 @@ class Joueur{
     public function ajouterCarriere(Carriere $carriere){
         $this->_carrieres[] = $carriere;
     }
-    // public function afficherCarriere(){
-    //     foreach($this->_carriere as $carriere){
-    //         echo $carriere->get_player()."est joueur au".$carriere->get_equipe."<br>";
-    //     }
-    // }
-    
+    public function afficherCarriere(){
+        foreach($this->_carrieres as $carriere){
+            echo $carriere->get_player()."est joueur au".$carriere->get_equipe."<br>";
+        }
+    }
+   public function __toString()
+    {
+        return $this->_prenom." ".$this->_nom." ". $this->ageReel().$this->_pays;
+    }
+
     public function getInfos(){
         $result ="<br>Joueur<br>" . 
     "<br>Nom : " . $this->_nom . 

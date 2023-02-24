@@ -39,7 +39,29 @@ class Equipe{
         $this->_dateCreation;
     }
 
+
+    //function
+
     public function ajouterCarriere(Carriere $carriere){
         $this->_carrieres[] = $carriere;
+    }
+    
+    public function afficherCarriere(){
+        foreach($this->_carrieres as $carriere){
+            echo $carriere->get_player()."est joueur au".$carriere->get_equipe."<br>";
+        }
+    }
+
+    public function __toString()
+    {
+        return $this->_nomEquipe." ".$this->_pays." ".$this->_dateCreation;
+    }
+
+    public function getInfos()
+    {
+    $result ="<br>*****Equipe*****<br>".
+        "<br>Nom de l'équipe : ".$this->_nomEquipe.
+        "<br>Pays : ".$this->_pays.
+        "<br>Date de creation : ".$this->_dateCreation;
     }
 }
