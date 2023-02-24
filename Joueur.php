@@ -1,11 +1,15 @@
 <?php
 
 class Joueur{
+    //attributs
     private string $_nom;
     private string $_prenom;
     private DateTime $_dateNaissance;
     private Pays $_pays;
     private array $_carrieres;
+
+
+            // construct
 
     public function __construct(string $_nom , string $_prenom , $_dateNaissance , Pays $_pays){
 
@@ -16,6 +20,36 @@ class Joueur{
         $this->_carrieres = [];
         
     }
+
+    //getter
+
+    public function get_nom(){
+        return  $this->_nom;  
+    } 
+    public function get_prenom(){
+        return  $this->_prenom;  
+    } 
+    public function get_age(){
+        return  $this->_dateNaissance;  
+    }
+    public function get_pays(){
+        return  $this->_pays;  
+    } 
+
+    //setter
+
+    public function set_nom(){
+        $this->_nom;
+    }
+    public function set_prenom(){
+        $this->_prenom;
+    }
+    public function set_dateNaissance($newDateNaissance){
+        $this->_dateNaissance = $newDateNaissance;
+    }
+    public function set_pays(){
+        $this->_pays;
+    }
  
 
     //function
@@ -24,4 +58,21 @@ class Joueur{
         $result = $this->_dateNaissance->diff($currentDate);
         return $result->format ('%Y ans');
     }
+
+    public function ajouterCarriere(Carriere $carriere){
+        $this->_carrieres[] = $carriere;
+    }
+    // public function afficherCarriere(){
+    //     foreach($this->_carriere as $carriere){
+    //         echo $carriere->get_player()."est joueur au".$carriere->get_equipe."<br>";
+    //     }
+    // }
+    
+    public function getInfos(){
+        $result ="<br>Joueur<br>" . 
+    "<br>Nom : " . $this->_nom . 
+    "<br>Prenom : " . $this->_prenom . 
+    "<br>Age : ".$this->ageReel();
+    }
+
 }

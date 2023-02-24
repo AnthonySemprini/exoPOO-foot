@@ -23,6 +23,21 @@ class Pays{
     public function get_equipe(){
         return  $this->_equipe;  
     } 
+
+
+    public function set_nom(){
+        return  $this->_nom;  
+    } 
+    public function set_joueur(){
+        return  $this->_joueur;  
+    } 
+    public function set_equipe(){
+        return  $this->_equipe;  
+    } 
+    
+   
+
+    
     
 
 }
