@@ -3,14 +3,26 @@
 class Pays{
     
     private string $_nom;
-    private Joueur $_joueur;
-    private Equipe $_equipe;
+    private array $_joueur;
+    private array $_equipe;
 
-    public function __construct(string $_nom , Joueur $_joueur , Equipe $_equipe)
+    public function __construct(string $_nom , array $_joueur , array $_equipe)
     {
         $this->_nom = $_nom;
-        $this->_joueur = $_joueur;
-        $this->_equipe = $_equipe;
+        $this->_joueur = [];
+        $this->_equipe = [];
         
     }
+
+    public function get_nom(){
+        return  $this->_nom;  
+    } 
+    public function get_joueur(){
+        return  $this->_joueur;  
+    } 
+    public function get_equipe(){
+        return  $this->_equipe;  
+    } 
+    
+
 }
