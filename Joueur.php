@@ -65,12 +65,13 @@ class Joueur{
     
     
     public function getInfosJoueur(){
-        echo 
-        $this ."<br>". $this->_pays ." - ". $this -> ageReel()."<br><br>";
+     
+        $result = $this ."<br>". $this->_pays ." - ". $this -> ageReel()."<br><br>";
         foreach ($this->_carrieres as $carriere){
-           echo $carriere->get_equipe()." ".$carriere."<br>";
+           $result .= $carriere->get_equipe()." ".$carriere."<br>";
         }
-        
+        echo "<br>";
+        return $result;
     }
     
     public function __toString()
@@ -80,6 +81,3 @@ class Joueur{
 }
 
 
-// $Joueur1 = new Joueur ("Dimitri","Lienard","1988-02-13",$Pays1);
-
-// echo $Joueur1->getInfos();

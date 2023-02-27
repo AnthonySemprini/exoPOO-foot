@@ -39,11 +39,12 @@ class Pays{
     
     public function getInfosPays(){
 
-        echo "<br>" . $this->_nomPays."<br><br>";
+        $result = "<br>" . $this->_nomPays."<br><br>";
         foreach($this->_equipes as $equipe){
-            echo $equipe."<br>";
-    
+            $result .= $equipe."<br>";
+          
         }
+        return $result;
     }
         
 
