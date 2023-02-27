@@ -3,7 +3,6 @@
 class Pays{
     //attributs
     private string $_nomPays;
-    private array $_joueurs;
     private array $_equipes;
 
 
@@ -12,7 +11,6 @@ class Pays{
     public function __construct(string $_nomPays )
     {
         $this->_nomPays = $_nomPays;
-        $this->_joueurs = [];
         $this->_equipes = [];
         
     }
@@ -29,30 +27,31 @@ class Pays{
 
     //function
 
-    public function ajouterjoueur(Joueur $joueur){
-        $this->_joueurs[] = $joueur;
-    }
-    public function afficherjoueur(){
-        foreach($this->_joueurs as $joueur){
-            echo $joueur->get_player().$joueur->get_equipe."<br>";
-        }
-    }
-
-    public function ajouterequipe(Equipe $equipe){
+  
+    public function ajouterEquipe(Equipe $equipe){
         $this->_equipes[] = $equipe;
     }
-    public function afficherequipe(){
+    // public function afficherequipe(){
+    //     foreach($this->_equipes as $equipe){
+    //         echo $equipe->get_Joueur().$equipe->get_equipe."<br>";
+    //     }
+    // }
+    
+    public function getInfosPays(){
+
+        echo "<br>" . $this->_nomPays."<br><br>";
         foreach($this->_equipes as $equipe){
-            echo $equipe->get_player().$equipe->get_equipe."<br>";
+            echo $equipe."<br>";
+    
         }
     }
-    
+        
+
     public function __toString()
     {
         return $this->_nomPays;
     }
 
-    
     
 
 }

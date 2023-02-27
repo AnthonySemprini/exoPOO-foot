@@ -39,10 +39,10 @@ class Carriere{
         $this->_date;
     }
 
-    
+
     public function __toString()
     {
-        return $this->_joueur." ".$this->_equipe." ".$this->_date;
+        return $this->_date;
     }
     
 }

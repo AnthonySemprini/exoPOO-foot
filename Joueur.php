@@ -11,7 +11,7 @@ class Joueur{
 
             // construct
 
-    public function __construct(string $_nom , string $_prenom , $_dateNaissance , Pays $_pays){
+    public function __construct(string $_nom , string $_prenom , $_dateNaissance ,Pays $_pays ){
 
         $this->_nom = $_nom;
         $this->_prenom = $_prenom;
@@ -56,27 +56,30 @@ class Joueur{
     public function ageReel() { 
         $currentDate= new DateTime();
         $result = $this->_dateNaissance->diff($currentDate);
-        return $result->format ('%Y ans');
+        return $result->format ('%Y ans ');
     }
 
     public function ajouterCarriere(Carriere $carriere){
         $this->_carrieres[] = $carriere;
     }
-    public function afficherCarriere(){
-        foreach($this->_carrieres as $carriere){
-            echo $carriere->get_player()."est joueur au".$carriere->get_equipe."<br>";
+    
+    
+    public function getInfosJoueur(){
+        echo 
+        $this ."<br>". $this->_pays ." - ". $this -> ageReel()."<br><br>";
+        foreach ($this->_carrieres as $carriere){
+           echo $carriere->get_equipe()." ".$carriere."<br>";
         }
+        
     }
-   public function __toString()
-    {
-        return $this->_prenom." ".$this->_nom." ". $this->ageReel().$this->_pays;
-    }
-
-    public function getInfos(){
-        $result ="<br>Joueur<br>" . 
-    "<br>Nom : " . $this->_nom . 
-    "<br>Prenom : " . $this->_prenom . 
-    "<br>Age : ".$this->ageReel();
-    }
-
+    
+    public function __toString()
+     {
+         return $this->_prenom." ".$this->_nom." ";
+     }
 }
+
+
+// $Joueur1 = new Joueur ("Dimitri","Lienard","1988-02-13",$Pays1);
+
+// echo $Joueur1->getInfos();

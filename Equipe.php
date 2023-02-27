@@ -13,6 +13,7 @@ class Equipe{
       $this->_pays = $_pays;  
       $this->_dateCreation = $_dateCreation;
       $this->_carrieres = [];
+      $this->_pays->ajouterEquipe($this);
     }
 
        //   getter
@@ -46,22 +47,18 @@ class Equipe{
         $this->_carrieres[] = $carriere;
     }
     
-    public function afficherCarriere(){
-        foreach($this->_carrieres as $carriere){
-            echo $carriere->get_player()."est joueur au".$carriere->get_equipe."<br>";
+
+    public function getInfosEquipe()
+    {
+        echo "<br><br>".$this." - " . $this->_pays."<br>".$this->_dateCreation."<br><br>";
+        foreach($this->_carrieres as $carriere)
+        {
+            echo $carriere->get_joueur().$carriere."<br>";
         }
     }
 
     public function __toString()
     {
-        return $this->_nomEquipe." ".$this->_pays." ".$this->_dateCreation;
-    }
-
-    public function getInfos()
-    {
-    $result ="<br>*****Equipe*****<br>".
-        "<br>Nom de l'équipe : ".$this->_nomEquipe.
-        "<br>Pays : ".$this->_pays.
-        "<br>Date de creation : ".$this->_dateCreation;
+        return $this->_nomEquipe;
     }
 }

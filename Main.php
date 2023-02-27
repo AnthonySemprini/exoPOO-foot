@@ -11,11 +11,11 @@ $Pays4 = new Pays ("Belgique");
 $Pays5 = new Pays ("Uruguay");
 $Pays6 = new Pays ("Espagne");
 
-
 $Equipe1 = new Equipe ("RCSA",$Pays1,1906);
 $Equipe2 = new Equipe ("PSG",$Pays1,1980);
 $Equipe3 = new Equipe ("Real Madrid",$Pays6,1918);
 $Equipe4 = new Equipe ("Manchester United",$Pays2,1900);
+
 
 $Joueur1 = new Joueur ("Dimitri","Lienard","1988-02-13",$Pays1);
 $Joueur2 = new Joueur ("Matt","Seltz","1990-04-23",$Pays4);
@@ -24,15 +24,20 @@ $Joueur4 = new Joueur ("Edisson","Cavani","1995-04-30",$Pays5);
 $Joueur5 = new Joueur ("Karim","Benzema","1990-11-28",$Pays1);
 $Joueur6 = new Joueur ("Marco","Verati","1990-04-01",$Pays3);
 
-$carriere1 = new Carriere($joueur1,$Equipe1,2018);
-$carriere2 = new Carriere($Joueur2,$Equipe1,2019);
-$carriere2 = new Carriere($Joueur3,$Equipe2,2017);
-$carriere2 = new Carriere($Joueur4,$Equipe2,2014);
-$carriere2 = new Carriere($Joueur4,$Equipe4,2022);
-$carriere2 = new Carriere($Joueur5,$Equipe3,2010);
-$carriere2 = new Carriere($Joueur6,$Equipe2,2010);
-$carriere2 = new Carriere($Joueur3,$Equipe3,2023);
-// $carriere2 = new Carriere()
+$Carriere1 = new Carriere($Joueur1,$Equipe1,2018);
+$Carriere2 = new Carriere($Joueur2,$Equipe1,2019);
+$Carriere2 = new Carriere($Joueur3,$Equipe2,2017);
+$Carriere2 = new Carriere($Joueur4,$Equipe2,2014);
+$Carriere2 = new Carriere($Joueur4,$Equipe4,2022);
+$Carriere2 = new Carriere($Joueur5,$Equipe3,2010);
+$Carriere2 = new Carriere($Joueur6,$Equipe2,2010);
+$Carriere2 = new Carriere($Joueur3,$Equipe3,2023);
+// $Carriere2 = new Carriere()
 
 
-echo $Joueur1->getInfos();
+$Joueur3->getInfosJoueur();
+// echo $Equipe1->getInfos();
+$Pays1->getInfosPays();
+// echo $Joueur3->afficherCarriere();
+$Equipe1->getInfosEquipe();
+// var_dump($Pays1);
